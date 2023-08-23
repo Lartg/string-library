@@ -17,7 +17,7 @@ function capitalizeWords(str) {
 }
 
 function removeExtraSpaces(str) {
-  const chars = str.split('')
+  const chars = str.trim().split('')
   let newStr = ''
   for (char in chars) {
     if (char != length(chars)) {
