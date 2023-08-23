@@ -67,11 +67,38 @@ function camelCase(str) {
   return newStr
 }
 function shift(str, nChars) {
-  return
+  let str1 = str.slice(0,nChars)
+  let str2 = str.slice(nChars,-1)
+  return str2 + str1
 }
 function makeHashTag(str) {
-  return
+  let operStr = str.split(' ')
+  if (length(operStr) <= 3){
+    let hashtags = []
+    for (word in operStr){
+      hashtags.append(`#${operStr[word]}`)
+    }
+    return hashtags
+  }
+  operStr = operStr.sort((a, b) => b.length - a.length).slice(0,3)
+  let hashtags = []
+  for (word in operStr){
+    hashtags.append(`#${operStr[word]}`)
+  }
+  return hashtags
 }
 function isEmpty(str) {
-  return
+  let chars = str.trim().split('')
+  for (char in chars){
+    if (chars[char] != '\n'){
+      if (chars[char] != '\r'){
+        if (chars[char] != '\t'){
+          if (chars[char] != ' '){
+            return false
+          }
+        }
+      }
+    }
+  }
+  return true
 }
