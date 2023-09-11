@@ -18,12 +18,13 @@ function capitalizeWords(str) {
 
 function removeExtraSpaces(str) {
   const chars = str.trim().split('')
+  console.log(chars)
   let newStr = ''
   for (char in chars) {
-    if (char != length(chars)) {
+    if (char != chars.length) {
       if (chars[char] == ' ') {
-        if (chars[char + 1] == ' ') {
-          continue
+        if (chars[parseInt(char) + 1] == ' ') {
+          continue;
         }
       }
     }
@@ -71,7 +72,7 @@ function camelCase(str) {
 
 function shift(str, nChars = 1) {
   let str1 = str.slice(0, nChars)
-  let str2 = str.slice(nChars, -1)
+  let str2 = str.slice(nChars)
   return str2 + str1
 }
 
@@ -107,3 +108,13 @@ function isEmpty(str) {
   }
   return true
 }
+module.exports.isEmpty = isEmpty
+module.exports.allCaps = allCaps
+module.exports.camelCase = camelCase
+module.exports.capitalize = capitalize
+module.exports.capitalizeWords = capitalizeWords
+module.exports.kebabCase = kebabCase
+module.exports.makeHashTag = makeHashTag
+module.exports.removeExtraSpaces = removeExtraSpaces
+module.exports.snakeCase = snakeCase
+module.exports.shift = shift
