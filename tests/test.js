@@ -1,4 +1,4 @@
-const str = require('../src/index.js')
+const str = require('../src/index')
 test("capitalize", () => {
   expect(str.capitalize('bear')).toBe('Bear')
   expect(str.capitalize('bear arms')).toBe('Bear arms')
